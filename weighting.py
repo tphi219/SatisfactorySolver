@@ -22,41 +22,84 @@ excluded_ingredients = {
     "Desc_Biofuel_C",
     "Desc_CartridgeStandard_C",
     "Desc_GenericBiomass_C",
+    "Desc_Crystal_mk2_C",
+    "Desc_Crystal_C",
+    "Desc_Crystal_mk3_C",
+    "Desc_Gunpowder_C",
 }
-# Alternatives to include 
 
+converter_exception = "Desc_Diamond_C"
 
-# Recipes to exclude based on what they produce
-# excluded_products = {"Desc_GenericBiomass_C"}
-# Add edges from ingredients to products
 for recipe in data["recipes"].values():
-    if recipe.get("inMachine") and not recipe.get("inWorkshop") and not recipe.get("alternate") and "Desc_Converter_C" not in recipe.get("producedIn", []):
-        ingredients = recipe.get("ingredients", [])
-        products = recipe.get("products", [])
+    produced_in = recipe.get("producedIn", [])
+    ingredients = recipe.get("ingredients", [])
+    products = recipe.get("products", [])
+
+    # Skip if any excluded ingredient is used
+    if any(ing["item"] in excluded_ingredients for ing in ingredients):
+        continue
+
+    # Allows if:
+    # - it's produced in a machine
+    # - not produced in workshop
+    # - not an alternate recipe
+    # - either not in Converter, or contains Diamond (is the one exception here)
+    if (
+        recipe.get("inMachine")
+        and not recipe.get("inWorkshop")
+        and not recipe.get("alternate")
+        and (
+            "Desc_Converter_C" not in produced_in
+            or any(ing["item"] == converter_exception for ing in ingredients)
+        )
+    ):
         for ing in ingredients:
-            if ing["item"] in excluded_ingredients:
-                continue
             for prod in products:
                 G.add_edge(ing["item"], prod["item"])
 
 # Compute PageRank
 ranks = nx.pagerank(G, alpha=0.85)
+
+# Get the terminal and entry nodes
 terminal_nodes = [node for node in G.nodes if G.out_degree(node) == 0]
 entry_nodes = [node for node in G.nodes if G.in_degree(node) == 0]
+
 # Print all the nodes
 for item, score in sorted(ranks.items(), key=lambda x: x[1], reverse=True):
     print(f"{item}: {score:.4f}")
 print(f"\nTerminal Nodes: {terminal_nodes}")
 print("######################################")
 print(f"Entry Nodes: {entry_nodes}")
+
+visited = set()
+
+for source in entry_nodes:
+    for target in terminal_nodes:
+        for path in nx.all_simple_paths(G, source=source, target=target):
+            visited.update(path)
+
+# Intermediate nodes
+intermediate_nodes = {n for n in G.nodes if n not in entry_nodes and n not in terminal_nodes}
+
+# Check which intermediates were visited
+unvisited = intermediate_nodes - visited
+print("Unvisited intermediates:", unvisited)
+
+
+
+
 # Basic layout
 plt.figure()
-pos = nx.spring_layout(G, k=2.5)
+# pos = nx.spring_layout(G, k=1.5, iterations=1000, scale=10)
+pos = nx.kamada_kawai_layout(G)
+# pos = nx.spectral_layout(G)
+# pos = nx.shell_layout(G)
+
 
 # Draw nodes and edges
-nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=300)
+nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=500)
 
-# Highlight terminal nodes in a different color (e.g., red)
+# Highlight terminal nodes and entry nodes
 nx.draw_networkx_nodes(G, pos, nodelist=terminal_nodes, node_color='red', node_size=500)
 nx.draw_networkx_nodes(G, pos, nodelist=entry_nodes, node_color='green', node_size=500)
 
