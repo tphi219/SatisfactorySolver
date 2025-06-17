@@ -12,8 +12,8 @@ G = nx.DiGraph()
 
 
 optimise = False
-makeplot = False
-findUnvisited = False
+makeplot = True
+findUnvisited = True
 
 
 excluded_ingredients = {
@@ -59,7 +59,7 @@ for recipe in data["recipes"].values():
         and not recipe.get("inWorkshop")
         and not recipe.get("alternate")
         and (
-            "Desc_Converter_C" not in produced_in
+            "Desc_Packager_C" not in produced_in and "Desc_Converter_C" not in produced_in
             or any(ing["item"] == converter_exception for ing in ingredients)
         )
     ):
