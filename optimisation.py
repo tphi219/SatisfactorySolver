@@ -25,6 +25,11 @@ stockpile = 10
 # === Objective ===
 prob += m  # Maximize Modular Frames produced per minute
 
+# Current plan for project: 
+# use the page rank weighting for the final termainl products to bias which is which in the objective function
+# every node will have a required stockpile of atm 10 but this may have to be reduced for further levels i.e maybe scale by importnace for player to 
+# be able to build with it (count instances for building recipes as reference normallised )
+
 # === Input constraints (raw material limits) ===
 prob += 30*p + 15*r <= 480     # Iron Ingots per minute
 prob += 15*w + 20*s <= 480     # Copper Ingots per minute
