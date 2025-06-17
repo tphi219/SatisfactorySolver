@@ -4,11 +4,31 @@ import networkx as nx
 ## Header notes is that this ignores packager use because yeah makes it even simpler for now
 # Ignores alternate recipes using only base game will have change later to remove screw recipes def
 
+def inspect_node(node):
+    print(f"\n=== Node: {node} ===")
+    
+    # Node attributes (if any)
+    print("Attributes:")
+    print(G.nodes[node])
 
+    # Predecessors (ingredients)
+    print("\nPredecessors (ingredients):")
+    for pred in G.predecessors(node):
+        print(f"  {pred} -> {node}")
+        print(f"    Edge data: {G[pred][node]}")
+
+    # Successors (products)
+    print("\nSuccessors (products):")
+    for succ in G.successors(node):
+        print(f"  {node} -> {succ}")
+        print(f"    Edge data: {G[node][succ]}")
 
 ## Global Control variables 
 findUnvisited = True
 
+## User params
+stockpile = 0 # This will probably be scaled by quantity needed for buildings
+input_limit = 480  # This is the input limit for the raw materials per minute (input nodes for now is blanket)
 
 
 # Load your recipe data
@@ -135,7 +155,52 @@ print("Objective function:")
 print(prob.objective)
 
 
-# Determining the constraints for every node and flow rates
+inspect_node("Desc_IronIngot_C")  # Example node to inspect
+print("----------------------------------------------------------")
+# Flow rate constraints of input items
+for raw_mat in entry_nodes:
+    # Gather all internal recipe nodes that consume this raw material
+    consumption_terms = []
+
+    for succ in G.successors(raw_mat):
+        # 'succ' here is a recipe node that consumes 'raw_mat'
+        if succ in part_recipe:  # make sure it's an internal node with a variable
+            rate = G[raw_mat][succ].get("rate", 0)
+            consumption_terms.append(part_recipe[succ] * rate)
+
+    if consumption_terms:
+        prob += pl.lpSum(consumption_terms) <= input_limit, f"Input_Limit_{raw_mat}"
+
+
+for item in intermediate_nodes:  # nodes that have both in_degree and out_degree > 0
+    # Production terms: sum over all recipes producing this item
+    production_terms = []
+    for pred in G.predecessors(item):
+        if pred in part_recipe:
+            rate = G[pred][item].get("rate", 0)
+            production_terms.append(part_recipe[pred] * rate)
+    
+    # Consumption terms: sum over all recipes consuming this item
+    consumption_terms = []
+    for succ in G.successors(item):
+        if succ in part_recipe:
+            rate = G[item][succ].get("rate", 0)
+            consumption_terms.append(part_recipe[succ] * rate)
+
+
+    if production_terms and consumption_terms:
+        prob += pl.lpSum(production_terms) >= pl.lpSum(consumption_terms) + stockpile, f"Balance_{item}"
+
+# for name, constraint in prob.constraints.items():
+#     print(f"{name}: {constraint}")
+
+# Solve the problem
+status = prob.solve()
+# Print the results
+print("\n--- Optimization Results ---")
+for node, var in part_recipe.items():
+    print(f"{node}: {var.varValue} machines")
+print("Status:", pl.LpStatus[status])
 
 
 
