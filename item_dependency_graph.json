@@ -1,0 +1,1243 @@
+{
+  "IronPlate": {
+    "name": "IronPlate",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 20.0
+    },
+    "usedIn": {
+      "NitricAcid": 10.0,
+      "SingularityCell": 100.0,
+      "IronPlateReinforced": 18.75
+    }
+  },
+  "IronIngot": {
+    "name": "IronIngot",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "IronPlate": 30.0,
+      "IronRod": 15.0
+    }
+  },
+  "IronRod": {
+    "name": "IronRod",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 15.0
+    },
+    "usedIn": {
+      "ModularFrame": 12.0
+    }
+  },
+  "OreIron": {
+    "name": "OreIron",
+    "producedFrom": {},
+    "usedIn": {
+      "IronIngot": 30.0,
+      "SteelIngot": 45.0
+    }
+  },
+  "DarkMatter": {
+    "name": "DarkMatter",
+    "producedFrom": {
+      "inputs": [
+        "Diamond",
+        "DarkEnergy"
+      ],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "QuantumOscillator": 30.0,
+      "DarkEnergy": 10.0,
+      "SingularityCell": 20.0,
+      "SpaceElevatorPart_11": 40.0,
+      "CrystalShard": 10.0
+    }
+  },
+  "Diamond": {
+    "name": "Diamond",
+    "producedFrom": {
+      "inputs": [
+        "Coal"
+      ],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "DarkMatter": 30.0,
+      "TimeCrystal": 12.0
+    }
+  },
+  "DarkEnergy": {
+    "name": "DarkEnergy",
+    "producedFrom": {
+      "inputs": [
+        "TimeCrystal",
+        "DarkMatter",
+        "QuartzCrystal",
+        "QuantumEnergy"
+      ],
+      "rate": 60.0
+    },
+    "usedIn": {
+      "DarkMatter": 150.0,
+      "Ficsonium": 200.0
+    }
+  },
+  "QuantumOscillator": {
+    "name": "QuantumOscillator",
+    "producedFrom": {
+      "inputs": [
+        "DarkMatter",
+        "CrystalOscillator",
+        "AluminumPlate",
+        "QuantumEnergy"
+      ],
+      "rate": 5.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_12": 4.0,
+      "DarkEnergy": 7.5,
+      "SpaceElevatorPart_11": 2.0,
+      "AlienPowerFuel": 7.5
+    }
+  },
+  "CrystalOscillator": {
+    "name": "CrystalOscillator",
+    "producedFrom": {
+      "inputs": [
+        "QuartzCrystal",
+        "Cable",
+        "IronPlateReinforced"
+      ],
+      "rate": 1.0
+    },
+    "usedIn": {
+      "QuantumOscillator": 5.0,
+      "DarkEnergy": 5.0,
+      "ModularFrameLightweight": 1.25
+    }
+  },
+  "AluminumPlate": {
+    "name": "AluminumPlate",
+    "producedFrom": {
+      "inputs": [
+        "AluminumIngot"
+      ],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "QuantumOscillator": 45.0,
+      "DarkEnergy": 45.0,
+      "AluminumPlateReinforced": 37.5
+    }
+  },
+  "QuantumEnergy": {
+    "name": "QuantumEnergy",
+    "producedFrom": {},
+    "usedIn": {
+      "QuantumOscillator": 125.00000000000001,
+      "DarkEnergy": 60.0,
+      "TemporalProcessor": 75.0,
+      "SpaceElevatorPart_12": 100.0,
+      "FicsoniumFuelRod": 50.0,
+      "AlienPowerFuel": 60.0,
+      "CrystalShard": 60.0
+    }
+  },
+  "TemporalProcessor": {
+    "name": "TemporalProcessor",
+    "producedFrom": {
+      "inputs": [
+        "TimeCrystal",
+        "ComputerSuper",
+        "FicsiteMesh",
+        "QuantumEnergy"
+      ],
+      "rate": 3.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_12": 4.0,
+      "DarkEnergy": 4.0
+    }
+  },
+  "TimeCrystal": {
+    "name": "TimeCrystal",
+    "producedFrom": {
+      "inputs": [
+        "Diamond"
+      ],
+      "rate": 6.0
+    },
+    "usedIn": {
+      "TemporalProcessor": 15.0,
+      "DarkEnergy": 10.0,
+      "CrystalShard": 10.0
+    }
+  },
+  "ComputerSuper": {
+    "name": "ComputerSuper",
+    "producedFrom": {
+      "inputs": [
+        "Computer",
+        "CircuitBoardHighSpeed",
+        "HighSpeedConnector",
+        "Plastic"
+      ],
+      "rate": 1.875
+    },
+    "usedIn": {
+      "TemporalProcessor": 3.0,
+      "DarkEnergy": 3.0,
+      "SpaceElevatorPart_7": 0.75
+    }
+  },
+  "FicsiteMesh": {
+    "name": "FicsiteMesh",
+    "producedFrom": {
+      "inputs": [
+        "FicsiteIngot"
+      ],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "TemporalProcessor": 45.0,
+      "DarkEnergy": 100.0,
+      "SpaceElevatorPart_10": 40.0,
+      "FicsoniumFuelRod": 100.0
+    }
+  },
+  "SpaceElevatorPart_12": {
+    "name": "SpaceElevatorPart_12",
+    "producedFrom": {
+      "inputs": [
+        "SpaceElevatorPart_6",
+        "TemporalProcessor",
+        "QuantumOscillator",
+        "QuantumEnergy"
+      ],
+      "rate": 4.0
+    },
+    "usedIn": {}
+  },
+  "SpaceElevatorPart_6": {
+    "name": "SpaceElevatorPart_6",
+    "producedFrom": {
+      "inputs": [
+        "SpaceElevatorPart_2",
+        "ElectromagneticControlRod"
+      ],
+      "rate": 1.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_12": 4.0,
+      "DarkEnergy": 4.0
+    }
+  },
+  "SAMFluctuator": {
+    "name": "SAMFluctuator",
+    "producedFrom": {
+      "inputs": [
+        "SAMIngot",
+        "Wire",
+        "SteelPipe"
+      ],
+      "rate": 10.0
+    },
+    "usedIn": {
+      "AlienPowerFuel": 12.5,
+      "DarkEnergy": 12.5
+    }
+  },
+  "SAMIngot": {
+    "name": "SAMIngot",
+    "producedFrom": {
+      "inputs": [
+        "SAM"
+      ],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "SAMFluctuator": 60.0
+    }
+  },
+  "Wire": {
+    "name": "Wire",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "SAMFluctuator": 50.0,
+      "Stator": 40.0,
+      "Rotor": 30.0,
+      "IronPlateReinforced": 37.5,
+      "Cable": 60.0
+    }
+  },
+  "SteelPipe": {
+    "name": "SteelPipe",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 20.0
+    },
+    "usedIn": {
+      "SAMFluctuator": 30.0,
+      "Stator": 15.0,
+      "ModularFrameHeavy": 33.75,
+      "Rotor": 10.0
+    }
+  },
+  "FicsiteIngot": {
+    "name": "FicsiteIngot",
+    "producedFrom": {},
+    "usedIn": {
+      "FicsiteMesh": 10.0
+    }
+  },
+  "Coal": {
+    "name": "Coal",
+    "producedFrom": {},
+    "usedIn": {
+      "Diamond": 600.0,
+      "SteelIngot": 45.0,
+      "AluminumScrap": 120.0,
+      "Water": 120.0
+    }
+  },
+  "SAM": {
+    "name": "SAM",
+    "producedFrom": {},
+    "usedIn": {
+      "SAMIngot": 120.0
+    }
+  },
+  "SpaceElevatorPart_10": {
+    "name": "SpaceElevatorPart_10",
+    "producedFrom": {
+      "inputs": [
+        "SpaceElevatorPart_7",
+        "FicsiteMesh",
+        "Water"
+      ],
+      "rate": 2.0
+    },
+    "usedIn": {}
+  },
+  "SpaceElevatorPart_7": {
+    "name": "SpaceElevatorPart_7",
+    "producedFrom": {
+      "inputs": [
+        "SpaceElevatorPart_5",
+        "ComputerSuper"
+      ],
+      "rate": 0.75
+    },
+    "usedIn": {
+      "SpaceElevatorPart_10": 0.5
+    }
+  },
+  "Water": {
+    "name": "Water",
+    "producedFrom": {
+      "inputs": [
+        "SulfuricAcid",
+        "AluminaSolution",
+        "AluminumCasing"
+      ],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_10": 10.0,
+      "Plastic": 20.0,
+      "Rubber": 40.0,
+      "AluminaSolution": 180.0,
+      "Silica": 180.0,
+      "NitricAcid": 30.0,
+      "CoolingSystem": 30.0,
+      "SulfuricAcid": 50.0
+    }
+  },
+  "CircuitBoard": {
+    "name": "CircuitBoard",
+    "producedFrom": {
+      "inputs": [
+        "CopperSheet",
+        "Plastic"
+      ],
+      "rate": 7.5
+    },
+    "usedIn": {
+      "Computer": 10.0,
+      "SpaceElevatorPart_5": 5.0,
+      "HighSpeedConnector": 3.75
+    }
+  },
+  "CopperSheet": {
+    "name": "CopperSheet",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 10.0
+    },
+    "usedIn": {
+      "CircuitBoard": 15.0,
+      "CircuitBoardHighSpeed": 25.0,
+      "AluminumPlateReinforced": 22.5
+    }
+  },
+  "Plastic": {
+    "name": "Plastic",
+    "producedFrom": {
+      "inputs": [
+        "PolymerResin",
+        "Water"
+      ],
+      "rate": 20.0
+    },
+    "usedIn": {
+      "CircuitBoard": 30.0,
+      "Computer": 40.0,
+      "ComputerSuper": 52.5
+    }
+  },
+  "PolymerResin": {
+    "name": "PolymerResin",
+    "producedFrom": {},
+    "usedIn": {
+      "Plastic": 60.0,
+      "Rubber": 40.0
+    }
+  },
+  "Rubber": {
+    "name": "Rubber",
+    "producedFrom": {
+      "inputs": [
+        "PolymerResin",
+        "Water"
+      ],
+      "rate": 20.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_4": 15.0,
+      "CoolingSystem": 12.0,
+      "MotorLightweight": 45.0
+    }
+  },
+  "SteelPlate": {
+    "name": "SteelPlate",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 15.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_2": 30.0,
+      "SteelPlateReinforced": 18.0,
+      "PlutoniumFuelRod": 4.5
+    }
+  },
+  "SteelIngot": {
+    "name": "SteelIngot",
+    "producedFrom": {
+      "inputs": [
+        "Coal"
+      ],
+      "rate": 45.0
+    },
+    "usedIn": {
+      "SteelPlate": 60.0,
+      "SteelPipe": 30.0
+    }
+  },
+  "SpaceElevatorPart_2": {
+    "name": "SpaceElevatorPart_2",
+    "producedFrom": {
+      "inputs": [
+        "ModularFrame",
+        "SteelPlate"
+      ],
+      "rate": 5.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_6": 2.5
+    }
+  },
+  "ModularFrame": {
+    "name": "ModularFrame",
+    "producedFrom": {
+      "inputs": [
+        "IronPlateReinforced",
+        "IronRod"
+      ],
+      "rate": 2.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_2": 2.5,
+      "ModularFrameHeavy": 7.5
+    }
+  },
+  "QuartzCrystal": {
+    "name": "QuartzCrystal",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 22.5
+    },
+    "usedIn": {
+      "CrystalOscillator": 18.0,
+      "CrystalShard": 60.0,
+      "DarkEnergy": 60.0
+    }
+  },
+  "RawQuartz": {
+    "name": "RawQuartz",
+    "producedFrom": {},
+    "usedIn": {
+      "QuartzCrystal": 37.5,
+      "Silica": 22.5
+    }
+  },
+  "AluminumCasing": {
+    "name": "AluminumCasing",
+    "producedFrom": {
+      "inputs": [
+        "AluminumIngot"
+      ],
+      "rate": 60.0
+    },
+    "usedIn": {
+      "Battery": 20.0,
+      "Water": 20.0,
+      "ModularFrameLightweight": 40.0,
+      "ModularFrameFused": 75.0
+    }
+  },
+  "AluminumIngot": {
+    "name": "AluminumIngot",
+    "producedFrom": {
+      "inputs": [
+        "AluminumScrap",
+        "Silica"
+      ],
+      "rate": 60.0
+    },
+    "usedIn": {
+      "AluminumCasing": 90.0,
+      "AluminumPlate": 30.0
+    }
+  },
+  "CopperIngot": {
+    "name": "CopperIngot",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "AluminumPlate": 10.0,
+      "CopperSheet": 20.0,
+      "CopperDust": 300.0,
+      "Wire": 15.0
+    }
+  },
+  "AluminaSolution": {
+    "name": "AluminaSolution",
+    "producedFrom": {
+      "inputs": [
+        "Water"
+      ],
+      "rate": 120.0
+    },
+    "usedIn": {
+      "AluminumScrap": 240.0,
+      "Water": 40.0,
+      "Battery": 40.0
+    }
+  },
+  "OreBauxite": {
+    "name": "OreBauxite",
+    "producedFrom": {},
+    "usedIn": {
+      "AluminaSolution": 120.0,
+      "Silica": 120.0
+    }
+  },
+  "Silica": {
+    "name": "Silica",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 37.5
+    },
+    "usedIn": {
+      "AluminumIngot": 75.0,
+      "NonFissibleUranium": 25.0,
+      "Water": 25.0
+    }
+  },
+  "AluminumScrap": {
+    "name": "AluminumScrap",
+    "producedFrom": {
+      "inputs": [
+        "AluminaSolution",
+        "Coal"
+      ],
+      "rate": 360.0
+    },
+    "usedIn": {
+      "AluminumIngot": 90.0
+    }
+  },
+  "Cable": {
+    "name": "Cable",
+    "producedFrom": {
+      "inputs": [
+        "Wire"
+      ],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "CrystalOscillator": 14.0,
+      "SpaceElevatorPart_3": 50.0,
+      "Computer": 20.0,
+      "HighSpeedConnector": 37.5
+    }
+  },
+  "IronPlateReinforced": {
+    "name": "IronPlateReinforced",
+    "producedFrom": {
+      "inputs": [
+        "IronPlate",
+        "Wire"
+      ],
+      "rate": 5.625
+    },
+    "usedIn": {
+      "CrystalOscillator": 2.5,
+      "ModularFrame": 3.0,
+      "SpaceElevatorPart_1": 2.0
+    }
+  },
+  "SteelPlateReinforced": {
+    "name": "SteelPlateReinforced",
+    "producedFrom": {
+      "inputs": [
+        "SteelPlate",
+        "Cement"
+      ],
+      "rate": 6.0
+    },
+    "usedIn": {
+      "ModularFrameHeavy": 9.375,
+      "NuclearFuelRod": 1.2
+    }
+  },
+  "Cement": {
+    "name": "Cement",
+    "producedFrom": {
+      "inputs": [
+        "Stone"
+      ],
+      "rate": 15.0
+    },
+    "usedIn": {
+      "SteelPlateReinforced": 36.0,
+      "ModularFrameHeavy": 20.625,
+      "PlutoniumCell": 20.0,
+      "UraniumCell": 15.0,
+      "SulfuricAcid": 15.0,
+      "SingularityCell": 200.0
+    }
+  },
+  "Motor": {
+    "name": "Motor",
+    "producedFrom": {
+      "inputs": [
+        "Rotor",
+        "Stator"
+      ],
+      "rate": 5.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_4": 2.0,
+      "MotorLightweight": 7.5
+    }
+  },
+  "Rotor": {
+    "name": "Rotor",
+    "producedFrom": {
+      "inputs": [
+        "SteelPipe",
+        "Wire"
+      ],
+      "rate": 5.0
+    },
+    "usedIn": {
+      "Motor": 10.0,
+      "SpaceElevatorPart_1": 2.0
+    }
+  },
+  "Stator": {
+    "name": "Stator",
+    "producedFrom": {
+      "inputs": [
+        "SteelPipe",
+        "Wire"
+      ],
+      "rate": 5.0
+    },
+    "usedIn": {
+      "Motor": 10.0,
+      "SpaceElevatorPart_3": 2.5,
+      "ElectromagneticControlRod": 6.0
+    }
+  },
+  "SpaceElevatorPart_3": {
+    "name": "SpaceElevatorPart_3",
+    "producedFrom": {
+      "inputs": [
+        "Stator",
+        "Cable"
+      ],
+      "rate": 2.5
+    },
+    "usedIn": {
+      "SpaceElevatorPart_5": 5.0
+    }
+  },
+  "CircuitBoardHighSpeed": {
+    "name": "CircuitBoardHighSpeed",
+    "producedFrom": {
+      "inputs": [
+        "CopperSheet",
+        "HighSpeedWire"
+      ],
+      "rate": 5.0
+    },
+    "usedIn": {
+      "ComputerSuper": 3.75,
+      "ElectromagneticControlRod": 4.0
+    }
+  },
+  "HighSpeedWire": {
+    "name": "HighSpeedWire",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 60.0
+    },
+    "usedIn": {
+      "CircuitBoardHighSpeed": 100.0,
+      "HighSpeedConnector": 210.0
+    }
+  },
+  "Computer": {
+    "name": "Computer",
+    "producedFrom": {
+      "inputs": [
+        "CircuitBoard",
+        "Cable",
+        "Plastic"
+      ],
+      "rate": 2.5
+    },
+    "usedIn": {
+      "SpaceElevatorPart_5": 2.0,
+      "ComputerSuper": 7.5,
+      "ModularFrameLightweight": 2.5
+    }
+  },
+  "ModularFrameHeavy": {
+    "name": "ModularFrameHeavy",
+    "producedFrom": {
+      "inputs": [
+        "ModularFrame",
+        "SteelPipe",
+        "SteelPlateReinforced",
+        "Cement"
+      ],
+      "rate": 2.8125
+    },
+    "usedIn": {
+      "SpaceElevatorPart_5": 1.0,
+      "ModularFrameFused": 1.5
+    }
+  },
+  "SpaceElevatorPart_4": {
+    "name": "SpaceElevatorPart_4",
+    "producedFrom": {
+      "inputs": [
+        "Motor",
+        "Rubber",
+        "SpaceElevatorPart_1"
+      ],
+      "rate": 1.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_8": 2.5
+    }
+  },
+  "SpaceElevatorPart_1": {
+    "name": "SpaceElevatorPart_1",
+    "producedFrom": {
+      "inputs": [
+        "IronPlateReinforced",
+        "Rotor"
+      ],
+      "rate": 2.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_4": 2.0
+    }
+  },
+  "SpaceElevatorPart_5": {
+    "name": "SpaceElevatorPart_5",
+    "producedFrom": {
+      "inputs": [
+        "SpaceElevatorPart_3",
+        "CircuitBoard",
+        "ModularFrameHeavy",
+        "Computer"
+      ],
+      "rate": 1.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_7": 1.5
+    }
+  },
+  "PlutoniumCell": {
+    "name": "PlutoniumCell",
+    "producedFrom": {
+      "inputs": [
+        "PlutoniumPellet",
+        "Cement"
+      ],
+      "rate": 5.0
+    },
+    "usedIn": {
+      "PlutoniumFuelRod": 7.5
+    }
+  },
+  "PlutoniumPellet": {
+    "name": "PlutoniumPellet",
+    "producedFrom": {
+      "inputs": [
+        "NonFissibleUranium",
+        "NuclearWaste"
+      ],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "PlutoniumCell": 10.0
+    }
+  },
+  "PressureConversionCube": {
+    "name": "PressureConversionCube",
+    "producedFrom": {
+      "inputs": [
+        "ModularFrameFused",
+        "ModularFrameLightweight"
+      ],
+      "rate": 1.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_9": 0.5
+    }
+  },
+  "ModularFrameFused": {
+    "name": "ModularFrameFused",
+    "producedFrom": {
+      "inputs": [
+        "ModularFrameHeavy",
+        "AluminumCasing",
+        "NitrogenGas"
+      ],
+      "rate": 1.5
+    },
+    "usedIn": {
+      "PressureConversionCube": 1.0,
+      "SpaceElevatorPart_8": 1.0
+    }
+  },
+  "ModularFrameLightweight": {
+    "name": "ModularFrameLightweight",
+    "producedFrom": {
+      "inputs": [
+        "AluminumCasing",
+        "CrystalOscillator",
+        "Computer"
+      ],
+      "rate": 2.5
+    },
+    "usedIn": {
+      "PressureConversionCube": 2.0,
+      "MotorLightweight": 3.75
+    }
+  },
+  "NitricAcid": {
+    "name": "NitricAcid",
+    "producedFrom": {
+      "inputs": [
+        "NitrogenGas",
+        "Water",
+        "IronPlate"
+      ],
+      "rate": 30.0
+    },
+    "usedIn": {
+      "NonFissibleUranium": 15.0,
+      "Water": 15.0
+    }
+  },
+  "NitrogenGas": {
+    "name": "NitrogenGas",
+    "producedFrom": {},
+    "usedIn": {
+      "NitricAcid": 120.0,
+      "CoolingSystem": 150.0,
+      "ModularFrameFused": 37.5
+    }
+  },
+  "NonFissibleUranium": {
+    "name": "NonFissibleUranium",
+    "producedFrom": {
+      "inputs": [
+        "NuclearWaste",
+        "Silica",
+        "NitricAcid",
+        "SulfuricAcid"
+      ],
+      "rate": 50.0
+    },
+    "usedIn": {
+      "PlutoniumPellet": 100.0
+    }
+  },
+  "NuclearWaste": {
+    "name": "NuclearWaste",
+    "producedFrom": {},
+    "usedIn": {
+      "NonFissibleUranium": 37.5,
+      "Water": 37.5,
+      "PlutoniumPellet": 25.0
+    }
+  },
+  "SulfuricAcid": {
+    "name": "SulfuricAcid",
+    "producedFrom": {
+      "inputs": [
+        "Sulfur",
+        "Water"
+      ],
+      "rate": 50.0
+    },
+    "usedIn": {
+      "NonFissibleUranium": 15.0,
+      "Water": 50.0,
+      "UraniumCell": 40.0,
+      "SulfuricAcid": 40.0,
+      "Battery": 50.0
+    }
+  },
+  "CopperDust": {
+    "name": "CopperDust",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 50.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_9": 100.0
+    }
+  },
+  "PlutoniumFuelRod": {
+    "name": "PlutoniumFuelRod",
+    "producedFrom": {
+      "inputs": [
+        "PlutoniumCell",
+        "SteelPlate",
+        "ElectromagneticControlRod",
+        "AluminumPlateReinforced"
+      ],
+      "rate": 0.25
+    },
+    "usedIn": {}
+  },
+  "ElectromagneticControlRod": {
+    "name": "ElectromagneticControlRod",
+    "producedFrom": {
+      "inputs": [
+        "Stator",
+        "CircuitBoardHighSpeed"
+      ],
+      "rate": 4.0
+    },
+    "usedIn": {
+      "PlutoniumFuelRod": 1.5,
+      "NuclearFuelRod": 2.0,
+      "SpaceElevatorPart_6": 1.0,
+      "FicsoniumFuelRod": 5.0,
+      "DarkEnergy": 5.0
+    }
+  },
+  "AluminumPlateReinforced": {
+    "name": "AluminumPlateReinforced",
+    "producedFrom": {
+      "inputs": [
+        "AluminumPlate",
+        "CopperSheet"
+      ],
+      "rate": 7.5
+    },
+    "usedIn": {
+      "PlutoniumFuelRod": 2.5,
+      "CoolingSystem": 12.0
+    }
+  },
+  "SpaceElevatorPart_9": {
+    "name": "SpaceElevatorPart_9",
+    "producedFrom": {
+      "inputs": [
+        "CopperDust",
+        "PressureConversionCube"
+      ],
+      "rate": 0.5
+    },
+    "usedIn": {
+      "SingularityCell": 1.0
+    }
+  },
+  "UraniumCell": {
+    "name": "UraniumCell",
+    "producedFrom": {
+      "inputs": [
+        "OreUranium",
+        "Cement",
+        "SulfuricAcid"
+      ],
+      "rate": 25.0
+    },
+    "usedIn": {
+      "NuclearFuelRod": 20.0
+    }
+  },
+  "OreUranium": {
+    "name": "OreUranium",
+    "producedFrom": {},
+    "usedIn": {
+      "UraniumCell": 50.0,
+      "SulfuricAcid": 50.0
+    }
+  },
+  "CoolingSystem": {
+    "name": "CoolingSystem",
+    "producedFrom": {
+      "inputs": [
+        "AluminumPlateReinforced",
+        "Rubber",
+        "Water",
+        "NitrogenGas"
+      ],
+      "rate": 6.0
+    },
+    "usedIn": {
+      "MotorLightweight": 7.5,
+      "SpaceElevatorPart_8": 3.0
+    }
+  },
+  "Battery": {
+    "name": "Battery",
+    "producedFrom": {
+      "inputs": [
+        "SulfuricAcid",
+        "AluminaSolution",
+        "AluminumCasing"
+      ],
+      "rate": 20.0
+    },
+    "usedIn": {}
+  },
+  "HighSpeedConnector": {
+    "name": "HighSpeedConnector",
+    "producedFrom": {
+      "inputs": [
+        "HighSpeedWire",
+        "Cable",
+        "CircuitBoard"
+      ],
+      "rate": 3.75
+    },
+    "usedIn": {
+      "ComputerSuper": 5.625
+    }
+  },
+  "Sulfur": {
+    "name": "Sulfur",
+    "producedFrom": {},
+    "usedIn": {
+      "SulfuricAcid": 50.0
+    }
+  },
+  "NuclearFuelRod": {
+    "name": "NuclearFuelRod",
+    "producedFrom": {
+      "inputs": [
+        "UraniumCell",
+        "SteelPlateReinforced",
+        "ElectromagneticControlRod"
+      ],
+      "rate": 0.4
+    },
+    "usedIn": {}
+  },
+  "GoldIngot": {
+    "name": "GoldIngot",
+    "producedFrom": {
+      "inputs": [],
+      "rate": 15.0
+    },
+    "usedIn": {
+      "HighSpeedWire": 12.0
+    }
+  },
+  "OreGold": {
+    "name": "OreGold",
+    "producedFrom": {},
+    "usedIn": {
+      "GoldIngot": 45.0
+    }
+  },
+  "MotorLightweight": {
+    "name": "MotorLightweight",
+    "producedFrom": {
+      "inputs": [
+        "CoolingSystem",
+        "ModularFrameLightweight",
+        "Motor",
+        "Rubber"
+      ],
+      "rate": 1.875
+    },
+    "usedIn": {
+      "SpaceElevatorPart_8": 1.0
+    }
+  },
+  "SpaceElevatorPart_8": {
+    "name": "SpaceElevatorPart_8",
+    "producedFrom": {
+      "inputs": [
+        "SpaceElevatorPart_4",
+        "MotorLightweight",
+        "CoolingSystem",
+        "ModularFrameFused"
+      ],
+      "rate": 1.0
+    },
+    "usedIn": {
+      "SpaceElevatorPart_11": 1.0
+    }
+  },
+  "Ficsonium": {
+    "name": "Ficsonium",
+    "producedFrom": {
+      "inputs": [
+        "PlutoniumWaste",
+        "SingularityCell",
+        "DarkEnergy"
+      ],
+      "rate": 10.0
+    },
+    "usedIn": {
+      "FicsoniumFuelRod": 5.0,
+      "DarkEnergy": 5.0
+    }
+  },
+  "PlutoniumWaste": {
+    "name": "PlutoniumWaste",
+    "producedFrom": {},
+    "usedIn": {
+      "Ficsonium": 10.0
+    }
+  },
+  "SingularityCell": {
+    "name": "SingularityCell",
+    "producedFrom": {
+      "inputs": [
+        "SpaceElevatorPart_9",
+        "DarkMatter",
+        "IronPlate",
+        "Cement"
+      ],
+      "rate": 10.0
+    },
+    "usedIn": {
+      "Ficsonium": 10.0,
+      "SpaceElevatorPart_11": 5.0
+    }
+  },
+  "FicsoniumFuelRod": {
+    "name": "FicsoniumFuelRod",
+    "producedFrom": {
+      "inputs": [
+        "Ficsonium",
+        "ElectromagneticControlRod",
+        "FicsiteMesh",
+        "QuantumEnergy"
+      ],
+      "rate": 2.5
+    },
+    "usedIn": {}
+  },
+  "SpaceElevatorPart_11": {
+    "name": "SpaceElevatorPart_11",
+    "producedFrom": {
+      "inputs": [
+        "SpaceElevatorPart_8",
+        "SingularityCell",
+        "QuantumOscillator",
+        "DarkMatter"
+      ],
+      "rate": 1.0
+    },
+    "usedIn": {}
+  },
+  "AlienPowerFuel": {
+    "name": "AlienPowerFuel",
+    "producedFrom": {
+      "inputs": [
+        "SAMFluctuator",
+        "CrystalShard",
+        "QuantumOscillator",
+        "QuantumEnergy"
+      ],
+      "rate": 2.5
+    },
+    "usedIn": {}
+  },
+  "CrystalShard": {
+    "name": "CrystalShard",
+    "producedFrom": {
+      "inputs": [
+        "TimeCrystal",
+        "DarkMatter",
+        "QuartzCrystal",
+        "QuantumEnergy"
+      ],
+      "rate": 5.0
+    },
+    "usedIn": {
+      "AlienPowerFuel": 7.5,
+      "DarkEnergy": 7.5
+    }
+  },
+  "Stone": {
+    "name": "Stone",
+    "producedFrom": {},
+    "usedIn": {
+      "Cement": 45.0
+    }
+  },
+  "OreCopper": {
+    "name": "OreCopper",
+    "producedFrom": {},
+    "usedIn": {
+      "CopperIngot": 30.0
+    }
+  }
+}

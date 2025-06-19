@@ -1,6 +1,7 @@
 import json
 from collections import defaultdict
 
+# Clean the item ID by removing Desc_ prefix and _C suffix
 def clean_id(item_id):
     if item_id.startswith("Desc_") and item_id.endswith("_C"):
         return item_id[5:-2]
@@ -19,6 +20,20 @@ excluded_final_products = {
     "Desc_IronScrew_C",
 }
 converter_exception = "Desc_Diamond_C"
+
+# Set of raw ores and ingots to exclude from producedFrom inputs
+excluded_production_inputs = {
+    "OreIron",
+    "OreGold",
+    "OreCopper",
+    "IronIngot",
+    "CopperIngot",
+    "SteelIngot",
+    "GoldIngot",
+    "AluminiumIngot",
+    "OreBauxite",
+    "RawQuartz",
+}
 
 with open("data1.0_no_screw.json", encoding="utf-8") as f:
     data = json.load(f)
@@ -41,10 +56,17 @@ for recipe in data["recipes"].values():
         ing["item"] == converter_exception for ing in ingredients):
         continue
 
+    # Get all cleaned input IDs
+    input_ids = [clean_id(ing["item"]) for ing in ingredients]
+
+    # Filter out excluded raw ores and ingots from inputs for producedFrom
+    input_ids_filtered = [i for i in input_ids if i not in excluded_production_inputs]
+
     for product in products:
         raw_product_id = product["item"]
         product_id = clean_id(raw_product_id)
         product_amt = product["amount"]
+        product_rate = (product_amt / time) * 60  # Output per minute
 
         if product_id not in item_graph:
             item_graph[product_id] = {
@@ -53,13 +75,16 @@ for recipe in data["recipes"].values():
                 "usedIn": {}
             }
 
+        # Store producedFrom with filtered inputs and production rate
+        item_graph[product_id]["producedFrom"] = {
+            "inputs": input_ids_filtered,
+            "rate": product_rate
+        }
+        # Still track usedIn for all inputs, including excluded ones
         for ing in ingredients:
-            raw_ing_id = ing["item"]
-            ing_id = clean_id(raw_ing_id)
+            ing_id = clean_id(ing["item"])
             ing_amt = ing["amount"]
-            ing_rate = (ing_amt / time) * 60
-
-            item_graph[product_id]["producedFrom"][ing_id] = ing_rate
+            ing_rate = (ing_amt / time) * 60  # consumption rate per minute
 
             if ing_id not in item_graph:
                 item_graph[ing_id] = {
@@ -69,9 +94,10 @@ for recipe in data["recipes"].values():
                 }
             item_graph[ing_id]["usedIn"][product_id] = ing_rate
 
+# Save the item graph to JSON file
 with open("item_dependency_graph.json", "w") as f:
     json.dump(item_graph, f, indent=2)
 
-# Preview
-print(json.dumps(item_graph["Wire"], indent=2))
-print(json.dumps(item_graph["IronPlateReinforced"], indent=2))
+# Preview some example items
+print(json.dumps(item_graph.get("CrystalOscillator", {}), indent=2))
+print(json.dumps(item_graph.get("Cable", {}), indent=2))

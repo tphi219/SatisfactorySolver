@@ -30,9 +30,10 @@ prob += 20.625 * Hea + 36 * Enc <= input_limit  # Concrete
 prob += 60 * beam + 30 * pipe <= input_limit  # Steel Ingots per minute
 
 # === Intermediate constraints (no explicit surplus variables) ===
-SURPLUS = 10  # fixed surplus per item per minute
+SURPLUS = 0  # fixed surplus per item per minute
 
 # === Intermediate constraints with minimum surplus ===
+# Generic form : Item Production rate from previous step >= sum(reqruired rate * next recipe) + surplus 
 prob += 15 * rod >= 12 * mod + SURPLUS
 prob += 20 * plate >= 18.75 * RPlate + SURPLUS
 prob += 30 * wire >= 37.5 * RPlate + SURPLUS
@@ -88,3 +89,9 @@ print(f"Iron Ingots used:    {iron_ingots_used:.2f} / {input_limit}")
 print(f"Copper Ingots used:  {copper_ingots_used:.2f} / {input_limit}")
 print(f"Concrete used:       {concrete_used:.2f} / {input_limit}")
 print(f"Steel Ingots used:   {steel_ingots_used:.2f} / {input_limit}")
+
+
+# Information required for setting it up 
+# Recipe: Name 
+# Ingredient items + rate (units/min)
+# output + rate (units/min)
